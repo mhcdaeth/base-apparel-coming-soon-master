@@ -1,0 +1,240 @@
+:root {
+  --Desaturated-red: rgb(206, 151, 151);
+  --Soft-red: hsl(0, 34%, 46%);
+  --Dark-Grayish-red: hsl(0, 6%, 24%);
+  --gradient-1: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+  --gradient-2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+  --font-size: 16px;
+}
+
+body {
+  margin: 20px 0 20px 0;
+  padding: 0;
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 10% 40% 45% 5%;
+      grid-template-rows: 10% 40% 45% 5%;
+}
+
+body h1, body p {
+  color: var(--Desaturated-red);
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body span {
+  color: var(--Dark-Grayish-red);
+}
+
+body .head {
+  padding: 3% 0 3% 0;
+}
+
+body .head img {
+  margin-left: 5%;
+}
+
+body .hero {
+  overflow: hidden;
+}
+
+body .hero img {
+  width: 100%;
+  height: auto;
+  image-orientation: object-fit;
+}
+
+body .main {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  place-items: center;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+}
+
+body .main .txts {
+  text-align: center;
+  width: 85%;
+  height: 100%;
+}
+
+body .main .txts h1 {
+  width: 50%;
+  font-size: 50px;
+  margin: 10px 0 10px 0;
+  display: inline-block;
+  line-height: 2.5rem;
+}
+
+body .main .txts p {
+  line-height: 1.3rem;
+  font-size: var(--font-size);
+}
+
+body .main .txts .input {
+  width: 80%;
+  position: relative;
+  display: inline-block;
+}
+
+body .main .txts .input .email {
+  border: 2px solid var(--Desaturated-red);
+  height: 30px;
+  width: 90%;
+  border-radius: 50px;
+  padding-left: 20px;
+}
+
+body .main .txts .input input::-webkit-input-placeholder {
+  color: var(--Desaturated-red);
+}
+
+body .main .txts .input input:-ms-input-placeholder {
+  color: var(--Desaturated-red);
+}
+
+body .main .txts .input input::-ms-input-placeholder {
+  color: var(--Desaturated-red);
+}
+
+body .main .txts .input input::placeholder {
+  color: var(--Desaturated-red);
+}
+
+body .main .txts .input .active {
+  border-color: var(--Soft-red);
+}
+
+body .main .txts .input .arrow {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  width: 60px;
+  height: 40px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--gradient-2)));
+  background-image: linear-gradient(var(--gradient-2));
+  border-radius: 40px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+body .main .txts .input .arrow img {
+  position: unset;
+  background-image: unset;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+}
+
+body .main .txts .input .error {
+  display: none;
+  position: absolute;
+  right: 60px;
+  top: 5px;
+}
+
+body .main .txts .input .show_err {
+  display: block;
+}
+
+body .main .txts .input .email_err {
+  border-color: var(--Soft-red);
+}
+
+body .main .txts .input p {
+  display: none;
+  margin: 0 0 0 30px;
+  float: left;
+}
+
+body .bg_pattern {
+  position: absolute;
+  z-index: -1;
+  display: none;
+}
+
+body .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+body .attribution a {
+  color: #3e52a3;
+}
+
+@media screen and (min-width: 375px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+    -ms-grid-rows: 95% 5%;
+        grid-template-rows: 95% 5%;
+        grid-template-areas: "left right"  "footer footer";
+  }
+  body .head, body .main {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: left;
+    margin-left: 15%;
+  }
+  body .hero {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: right;
+  }
+  body .hero img {
+    height: 100%;
+  }
+  body .main .txts {
+    height: 80%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    justify-items: start;
+  }
+  body .main .txts h1, body .main .txts p {
+    text-align: left;
+    display: block;
+    width: 60%;
+  }
+  body .main .txts h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+  body .main .txts p {
+    line-height: 1.6rem;
+  }
+  body .main .txts .input {
+    width: 60%;
+  }
+  body .main .txts .input p {
+    margin: 0 0 0 30px;
+  }
+  body .active {
+    border-color: var(--Soft-red);
+  }
+  body .bg_pattern {
+    display: block;
+  }
+  body footer {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: footer;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
